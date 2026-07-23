@@ -10,6 +10,14 @@ async function getAllConnaissances() {
     return resultats;
 }
 
+async function getAllTags() {
+    const resultats = await getDatabase()
+        .collection("connaissance")
+        .distinct("tags");
+
+    return resultats;
+}
+
 async function getConnaissanceParId(id) {
     const resultats = await getDatabase()
         .collection("connaissance")
@@ -21,8 +29,13 @@ async function getConnaissanceParId(id) {
 async function getConnaissanceParTag(tags) {
     const resultat = await getDatabase()
         .collection("connaissance")
-        .find({tags: tags})
+        .find({
+            tags:{
+                $in: tags
+            }
+        })
         .toArray();
+    console.log("Résultats Mongo :", resultat);
     return resultat;
 }
 
@@ -53,4 +66,4 @@ async function changeConnaissance(id, payload) {
 }
 
 
-module.exports = {getAllConnaissances, getConnaissanceParId, insertConnaissance, supprConnaissance, changeConnaissance, getConnaissanceParTag}
+module.exports = {getAllConnaissances, getConnaissanceParId, insertConnaissance, supprConnaissance, changeConnaissance, getConnaissanceParTag, getAllTags}

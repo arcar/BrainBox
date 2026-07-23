@@ -11,11 +11,13 @@ async function askLLM(prompt){
         {
             model:"llama3.2:3b",
             prompt,
-            stream:false
+            stream:false,
+            options:{temperature:0},
         },
-         {
+        {
         timeout:120000
-    }
+        }
+    
     );
 
     return response.data.response;
