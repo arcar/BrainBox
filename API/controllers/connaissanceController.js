@@ -1,4 +1,4 @@
-const { getAllConnaissances, supprConnaissance, changeConnaissance, getConnaissanceParId, insertConnaissance} = require("../models/connaissanceModel")
+const { getAllConnaissances, supprConnaissance, changeConnaissance, getConnaissanceParId, insertConnaissance, getConnaissanceParTag} = require("../models/connaissanceModel")
 
 
 async function allConnaissances(req, res) {
@@ -21,6 +21,22 @@ async function ConnaissanceParId(req, res) {
     const {id} = req.query;
     try {
         const resultats = await getConnaissanceParId(id);
+        if (resultats) {
+            return res.status(200).json(resultats);
+        } else {
+            return res.status(404)
+        }
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        });
+    }
+}
+
+async function ConnaissanceParTag(req, res) {
+    const {tags} = req.query;
+    try {
+        const resultats = await getConnaissanceParTag(tags);
         if (resultats) {
             return res.status(200).json(resultats);
         } else {
@@ -98,4 +114,4 @@ async function modifConnaissanceParId(req, res) {
     }
 }
 
-module.exports = { allConnaissances, ConnaissanceParId, addConnaissance, deleteConnaissance, modifConnaissanceParId}
+module.exports = { allConnaissances, ConnaissanceParId, addConnaissance, deleteConnaissance, modifConnaissanceParId, ConnaissanceParTag}

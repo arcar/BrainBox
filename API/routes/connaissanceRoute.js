@@ -4,6 +4,7 @@ const router = express.Router()
 
 router.get('/allConnaissances', connaissanceController.allConnaissances);
 router.get('/ConnaissanceParId/', connaissanceController.ConnaissanceParId);
+router.get('/ConnaissanceParTag/', connaissanceController.ConnaissanceParTag);
 router.post('/addConnaissance', connaissanceController.addConnaissance);
 router.delete('/deleteConnaissance/', connaissanceController.deleteConnaissance);
 router.put('/modifConnaissance/', connaissanceController.modifConnaissanceParId);

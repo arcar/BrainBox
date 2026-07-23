@@ -18,6 +18,14 @@ async function getConnaissanceParId(id) {
     return resultats;
 }
 
+async function getConnaissanceParTag(tags) {
+    const resultat = await getDatabase()
+        .collection("connaissance")
+        .find({tags: tags})
+        .toArray();
+    return resultat;
+}
+
 async function insertConnaissance(payload) {
     const resultats = await getDatabase()
         .collection("connaissance")
@@ -45,4 +53,4 @@ async function changeConnaissance(id, payload) {
 }
 
 
-module.exports = {getAllConnaissances, getConnaissanceParId, insertConnaissance, supprConnaissance, changeConnaissance}
+module.exports = {getAllConnaissances, getConnaissanceParId, insertConnaissance, supprConnaissance, changeConnaissance, getConnaissanceParTag}
