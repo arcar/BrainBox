@@ -1,0 +1,33 @@
+services:
+  api:    
+    build:
+      context: ./API
+      dockerfile: Dockerfile
+    image: arcar13/brainbox:backend
+    container_name: brainbox-api
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/app
+      - /app/node_modules
+    env_file:
+      - ./api/.env
+
+
+
+  ollama:
+    image: ollama/ollama
+    container_name: brainbox-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./models:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    

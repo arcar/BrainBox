@@ -1,0 +1,4 @@
+.env
+API/node_modules
+models/
+ollama/data/models/
