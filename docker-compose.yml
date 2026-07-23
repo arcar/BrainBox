@@ -17,6 +17,27 @@ services:
     depends_on:
       - ollama
 
+  frontend:
+    build:
+      context: ./angular
+      dockerfile: Dockerfile
+    image: arcar13/brainbox:angular
+    container_name: brainbox-angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./angular:/app
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: true
+    command:
+      - npm
+      - start
+      - -- 
+      - --host
+      - 0.0.0.0
+    depends_on:
+      - api
 
   ollama:
     image: ollama/ollama

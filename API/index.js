@@ -1,9 +1,14 @@
 require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 const express = require('express');
 const PORT = 3000;
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: ["http://localhost:4200",
+     "http://frontend:4200"]
+}));
 
 
 const { connectToDatabase, getClient, getDatabase } = require('./config/mongo');
