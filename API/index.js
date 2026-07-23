@@ -9,6 +9,7 @@ app.use(express.json());
 const { connectToDatabase, getClient, getDatabase } = require('./config/mongo');
 const dbMiddleware = require('./middleware/dbMiddleware');
 const connaissanceRoute = require("./routes/connaissanceRoute")
+const iaRoute = require("./routes/iaRoute");
 
 // route TEST
 app.get('/test', (req, res) => {
@@ -18,9 +19,10 @@ app.get('/test', (req, res) => {
 })
 
 app.use(connaissanceRoute);
+app.use(iaRoute);
 
 // Démarrer le serveur
-app.listen(PORT, async () => {
+app.listen(PORT, "0.0.0.0", async () => {
     await connectToDatabase()
     console.log(`Serveur démarré sur le port ${PORT}`);
 });

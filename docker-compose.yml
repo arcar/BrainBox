@@ -1,7 +1,7 @@
 services:
   api:    
     build:
-      context: ./API
+      context: ./api
       dockerfile: Dockerfile
     image: arcar13/brainbox:backend
     container_name: brainbox-api
@@ -12,7 +12,10 @@ services:
       - /app/node_modules
     env_file:
       - ./api/.env
-
+    environment:
+      OLLAMA_URL: http://ollama:11434
+    depends_on:
+      - ollama
 
 
   ollama:
@@ -20,8 +23,10 @@ services:
     container_name: brainbox-ollama
     ports:
       - "11434:11434"
+    env_file:
+      - ./api/.env
     volumes:
-      - ./models:/root/.ollama
+      - ./LLM:/root/.ollama
     deploy:
       resources:
         reservations:

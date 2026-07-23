@@ -1,4 +1,10 @@
 .env
 API/node_modules
-models/
-ollama/data/models/
+models/blobs/
+models/models/
+models/cache/
+models/history
+models/id_ed25519
+models/id_ed25519.pub
+LLM/
+ollama/
