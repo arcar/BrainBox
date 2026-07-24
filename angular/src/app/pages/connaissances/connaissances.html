@@ -1,0 +1,297 @@
+<section class="page">
+
+
+<h1>
+Gestion des connaissances
+</h1>
+
+<!-- <p>
+Nombre : {{connaissances.length}}
+</p> -->
+
+<p *ngIf="chargement">
+
+Chargement des connaissances...
+
+</p>
+
+
+
+<p *ngIf="!chargement">
+
+{{ connaissances.length }} connaissances trouvées
+
+</p>
+
+
+
+
+
+<div class="toolbar">
+
+
+<button routerLink="/connaissances/new">
+
+➕ Ajouter
+
+</button>
+
+
+
+<button
+
+[disabled]="!connaissanceSelectionnee"
+type="button"
+(click)="modifier()">
+
+✏️ Modifier
+
+</button>
+
+
+
+<button
+
+[disabled]="!connaissanceSelectionnee"
+type="button"
+(click)="supprimer()">
+
+🗑 Supprimer
+
+</button>
+
+
+
+<div class="search">
+
+<input
+
+[(ngModel)]="rechercheId"
+
+placeholder="ID">
+
+
+<button
+type="button"
+(click)="chercherId()">
+
+🔎
+
+</button>
+
+</div>
+
+
+
+
+<div class="search">
+
+<input
+
+[(ngModel)]="rechercheTag"
+
+placeholder="Tag">
+
+
+<button
+type="button"
+(click)="chercherTag()">
+
+🏷
+
+</button>
+
+</div>
+
+
+
+<button
+type="button"
+(click)="charger()"
+title="Rafraîchir">
+
+🔄
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div class="conteneur">
+
+
+
+
+
+<!-- LISTE -->
+
+<div class="liste">
+
+
+<h3>
+
+Liste
+
+</h3>
+
+
+
+@for(
+item of connaissances;
+track item._id
+){
+
+<div
+
+class="carte"
+
+[class.active]="
+item._id === connaissanceSelectionnee?._id
+"
+
+(click)="selectionner(item)">
+
+
+
+<div class="titre">
+
+
+<span
+
+class="pastille"
+
+[style.background-color]="
+item.color || '#cccccc'
+">
+
+</span>
+
+
+
+{{item.title}}
+
+
+
+@if(item.pinned){
+
+📌
+
+}
+
+
+</div>
+
+
+
+
+<div class="tags">
+
+
+@for(
+tag of item.tags;
+track tag
+){
+
+<span>
+
+{{tag}}
+
+</span>
+
+}
+
+
+</div>
+
+
+</div>
+
+
+}
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- DETAIL -->
+
+<div
+
+class="detail"
+
+*ngIf="connaissanceSelectionnee">
+
+
+
+<h2>
+
+{{connaissanceSelectionnee.title}}
+
+</h2>
+
+
+
+<p>
+
+{{connaissanceSelectionnee.content}}
+
+</p>
+
+
+
+
+<p
+
+*ngIf="connaissanceSelectionnee.createdAt">
+
+
+Créé le :
+
+{{connaissanceSelectionnee.createdAt | date:'dd/MM/yyyy'}}
+
+
+</p>
+
+
+
+<div class="tags">
+
+
+@for(
+tag of connaissanceSelectionnee.tags;
+track tag
+){
+
+<span>
+
+{{tag}}
+
+</span>
+
+}
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>

@@ -9,7 +9,7 @@ async function askLLM(prompt){
     const response = await axios.post(
         `${OLLAMA_URL}/api/generate`,
         {
-            model:"llama3.2:3b",
+            model:"qwen2.5:3b",
             prompt,
             stream:false,
             options:{temperature:0},

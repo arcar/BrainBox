@@ -27,6 +27,14 @@ async function getConnaissanceParId(id) {
 }
 
 async function getConnaissanceParTag(tags) {
+
+    console.log(
+        "TYPE TAGS :",
+        Array.isArray(tags),
+        tags
+    );
+
+
     const resultat = await getDatabase()
         .collection("connaissance")
         .find({
@@ -35,10 +43,10 @@ async function getConnaissanceParTag(tags) {
             }
         })
         .toArray();
-    console.log("Résultats Mongo :", resultat);
+
+
     return resultat;
 }
-
 async function insertConnaissance(payload) {
     const resultats = await getDatabase()
         .collection("connaissance")

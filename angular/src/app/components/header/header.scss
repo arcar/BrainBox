@@ -1,0 +1,78 @@
+.header {
+
+  height: 70px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 30px;
+
+  background: #1e293b;
+
+  color: white;
+
+  position: relative;
+
+  z-index: 10;
+
+}
+
+
+.menu {
+
+  display: flex;
+
+  gap: 15px;
+
+}
+
+
+.menu button {
+
+  padding: 10px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #3b82f6;
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+
+}
+
+
+.menu button:hover {
+
+  background: #2563eb;
+
+  transform: translateY(-2px);
+
+}
+
+
+.logo {
+
+  font-size: 28px;
+  font-weight: bold;
+
+}
+
+
+.logo sup {
+
+  font-size: 12px;
+
+  vertical-align: super;
+
+  margin-left: 2px;
+
+}

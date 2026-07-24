@@ -1,0 +1,203 @@
+.page {
+
+padding:30px;
+
+height:calc(100vh - 80px);
+
+}
+
+
+
+.toolbar {
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-bottom:20px;
+
+}
+
+
+
+button {
+
+padding:10px 15px;
+
+border:none;
+
+border-radius:8px;
+
+background:#2563eb;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+
+
+button:disabled {
+
+opacity:.5;
+
+}
+
+
+
+.search {
+
+display:flex;
+
+gap:5px;
+
+}
+
+
+
+input {
+
+padding:10px;
+
+border-radius:8px;
+
+border:1px solid #ccc;
+
+}
+
+
+
+
+
+.conteneur {
+
+display:flex;
+
+gap:25px;
+
+height:calc(100% - 150px);
+
+}
+
+
+
+
+
+.liste {
+
+width:380px;
+
+overflow-y:auto;
+
+}
+
+
+
+
+
+.carte {
+
+padding:15px;
+
+margin-bottom:10px;
+
+background:#f8fafc;
+
+border-radius:12px;
+
+cursor:pointer;
+
+border-left:5px solid transparent;
+
+}
+
+
+
+.carte:hover {
+
+background:#e0f2fe;
+
+}
+
+
+
+.carte.active {
+
+background:#dbeafe;
+
+border-left-color:#2563eb;
+
+}
+
+
+
+
+
+.titre {
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-weight:bold;
+
+}
+
+
+
+
+
+.pastille {
+
+width:14px;
+
+height:14px;
+
+border-radius:50%;
+
+}
+
+
+
+
+
+.tags span {
+
+display:inline-block;
+
+background:#2563eb;
+
+color:white;
+
+font-size:12px;
+
+padding:4px 10px;
+
+border-radius:15px;
+
+margin:5px 5px 0 0;
+
+}
+
+
+
+
+
+.detail {
+
+flex:1;
+
+padding:25px;
+
+background:#f8fafc;
+
+border-radius:15px;
+
+overflow-y:auto;
+
+}

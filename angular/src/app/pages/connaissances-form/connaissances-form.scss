@@ -1,0 +1,77 @@
+.page {
+
+    padding: 30px;
+
+}
+
+.formulaire {
+
+    display: flex;
+    flex-direction: column;
+
+    max-width: 900px;
+
+    gap: 15px;
+
+}
+
+label {
+
+    font-weight: 600;
+
+}
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+}
+
+textarea {
+
+    resize: vertical;
+
+    min-height: 300px;
+
+}
+
+.actions {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+}
+
+button {
+
+    padding: 12px 24px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+button:hover {
+
+    background: #1d4ed8;
+
+}

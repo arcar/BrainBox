@@ -14,7 +14,7 @@ async function questionIA(req,res){
 
         const tags = await extraireTags(prompt, tagsDisponibles);
         console.log("Tags détectés :", tags);
-        const connaissances = await getConnaissanceParTag(tags);
+        const connaissances = await getConnaissanceParTag(Array.isArray(tags) ? tags : [tags]);
         console.log("Résultats Mongo :", connaissances);  
 
         if(connaissances.length === 0){

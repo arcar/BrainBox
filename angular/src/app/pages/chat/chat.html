@@ -1,0 +1,36 @@
+<h1>
+  Chat IA
+</h1>
+
+
+<textarea
+  [(ngModel)]="question"
+  placeholder="Votre question..."
+  rows="5">
+</textarea>
+
+
+<button
+  type="button"
+  (click)="envoyer()">
+  Envoyer
+</button>
+
+
+
+<h2>
+  Réponse BrainBox
+</h2>
+
+
+<textarea
+
+  class="reponse"
+
+  [(ngModel)]="reponse"
+
+  readonly
+
+  rows="10">
+
+</textarea>

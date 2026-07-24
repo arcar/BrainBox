@@ -1,0 +1,146 @@
+.accueil {
+
+  position: absolute;
+
+  top: 70px;
+  left: 0;
+
+
+  width: 100vw;
+
+  height: calc(100vh - 70px);
+
+
+  background-image: url('/assets/accueil_bkg.webp');
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+
+  overflow: hidden;
+
+}
+
+
+
+.overlay {
+
+
+  background: rgba(0,0,0,0.45);
+
+
+  padding: 60px;
+
+
+  border-radius: 20px;
+
+
+  color: white;
+
+
+  text-align: center;
+
+
+  max-width: 700px;
+
+
+  backdrop-filter: blur(5px);
+
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+
+}
+
+
+
+h1 {
+
+  margin: 0 0 20px;
+
+
+  font-size: clamp(2rem,5vw,4rem);
+
+}
+
+
+
+p {
+
+  font-size: clamp(1rem,2vw,1.5rem);
+
+
+  margin-bottom: 35px;
+
+}
+
+
+
+button {
+
+
+  padding: 15px 40px;
+
+
+  border: none;
+
+
+  border-radius: 12px;
+
+
+  background: #3b82f6;
+
+
+  color: white;
+
+
+  font-size: 18px;
+
+
+  cursor: pointer;
+
+
+}
+
+
+
+button:hover {
+
+  background: #2563eb;
+
+}
+
+
+
+@media(max-width:768px){
+
+
+  .overlay {
+
+    margin:20px;
+
+    padding:35px 25px;
+
+  }
+
+
+}
+.logo sup {
+
+  font-size: 12px;
+
+  vertical-align: super;
+
+  margin-left: 2px;
+
+}
