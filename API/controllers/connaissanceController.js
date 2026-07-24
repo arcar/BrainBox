@@ -36,8 +36,9 @@ async function ConnaissanceParId(req, res) {
 async function ConnaissanceParTag(req, res) {
     const {tags} = req.params;
      console.log("TAG RECU :", tags);
+     const listeTags = tags.split(',');
     try {
-        const resultats = await getConnaissanceParTag([tags]);
+        const resultats = await getConnaissanceParTag(listeTags);
         if (resultats) {
             return res.status(200).json(resultats);
         } else {

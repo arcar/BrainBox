@@ -133,7 +133,7 @@ export class Connaissances implements OnInit {
 
 
   chercherId(): void {
-
+    console.log("CLIC RECHERCHE ID");
 
     if(!this.rechercheId)
       return;
@@ -148,9 +148,9 @@ export class Connaissances implements OnInit {
       .subscribe({
 
         next:(data)=>{
-
+          console.log("RESULTAT API :", data);
           this.connaissances = [data];
-
+          this.cd.detectChanges();
         },
 
         error:(err)=>{
@@ -186,7 +186,7 @@ export class Connaissances implements OnInit {
         next:(data)=>{
 
           this.connaissances = data;
-
+          this.cd.detectChanges();
         },
 
         error:(err)=>{

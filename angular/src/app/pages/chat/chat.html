@@ -1,36 +1,203 @@
-<h1>
-  Chat IA
-</h1>
+<section class="chat-page">
 
 
-<textarea
-  [(ngModel)]="question"
-  placeholder="Votre question..."
-  rows="5">
-</textarea>
-
-
-<button
-  type="button"
-  (click)="envoyer()">
-  Envoyer
-</button>
+    <div class="chat-container">
 
 
 
-<h2>
-  Réponse BrainBox
-</h2>
+        <!-- HEADER -->
+
+        <header class="chat-header">
 
 
-<textarea
+            <div>
 
-  class="reponse"
 
-  [(ngModel)]="reponse"
+                <h1>
 
-  readonly
+                    🤖 Assistant BrainBox
 
-  rows="10">
+                </h1>
 
-</textarea>
+
+                <p>
+
+                    Interrogez votre base de connaissances
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="status">
+
+
+                <span></span>
+
+                IA Online
+
+
+            </div>
+
+
+
+        </header>
+
+
+
+
+
+
+
+        <!-- REPONSE -->
+
+
+        <section class="conversation">
+
+
+
+            @if(!reponse){
+
+
+                <div class="empty">
+
+
+                    <div class="icon">
+
+                        🧠
+
+                    </div>
+
+
+                    <h2>
+
+                        Posez votre première question
+
+                    </h2>
+
+
+                    <p>
+
+                        BrainBox analyse vos connaissances
+                        pour vous répondre.
+
+                    </p>
+
+
+                </div>
+
+
+            }
+
+
+
+
+
+            @else{
+
+
+                <article class="message ia">
+
+
+                    <div class="avatar">
+
+                        🤖
+
+                    </div>
+
+
+
+                    <div class="bubble">
+
+
+                        <h3>
+
+                            Réponse BrainBox
+
+                        </h3>
+
+
+
+                        <p>
+
+                            {{reponse}}
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+            }
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- SAISIE QUESTION -->
+
+
+        <section class="input-zone">
+
+
+
+            <textarea
+
+            [(ngModel)]="question"
+
+            placeholder="Posez votre question à BrainBox..."
+
+            rows="3">
+
+            </textarea>
+
+
+
+
+
+            <button
+
+            type="button"
+
+            (click)="envoyer()">
+
+
+                <span>
+
+                    🚀
+
+                </span>
+
+
+                Envoyer
+
+
+
+            </button>
+
+
+
+
+        </section>
+
+
+
+
+
+    </div>
+
+
+
+</section>

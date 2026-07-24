@@ -26,21 +26,19 @@ async function getConnaissanceParId(id) {
     return resultats;
 }
 
-async function getConnaissanceParTag(tags) {
+async function getConnaissanceParTag(listeTags) {
 
     console.log(
         "TYPE TAGS :",
-        Array.isArray(tags),
-        tags
+        Array.isArray(listeTags),
+        listeTags
     );
 
 
     const resultat = await getDatabase()
         .collection("connaissance")
         .find({
-            tags:{
-                $in: tags
-            }
+            tags: { $in: listeTags }
         })
         .toArray();
 

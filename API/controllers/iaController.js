@@ -51,41 +51,58 @@ RÈGLE 2
 Tu n'as absolument pas le droit d'utiliser tes connaissances personnelles.
 
 RÈGLE 3
-Si la réponse n'est pas écrite dans le CONTEXTE, répond uniquement :
+Si le CONTEXTE ne contient aucune information permettant de répondre,
+répond exactement :
 
 Je ne possède pas cette information dans ma base de connaissances.
+
+Sinon, répond uniquement avec les informations présentes dans le CONTEXTE.
+Ne commence jamais ta réponse par cette phrase si une information existe.
 
 RÈGLE 4
 N'invente jamais une commande, un exemple ou une explication.
 
-CONTEXTE :
+CONTEXTE DISPONIBLE :
 
 ${contexte}
 
-QUESTION :
+
+QUESTION UTILISATEUR :
 
 ${prompt}
 
-Réponse :
+
+INSTRUCTIONS FINALES :
+
+- Utilise uniquement le contexte fourni.
+- Si la réponse existe dans le contexte, répond directement.
+- N'ajoute aucune phrase de refus.
+- Ne dis jamais "Je ne possède pas cette information" si le contexte contient la réponse.
+
+
+RÉPONSE :
 
 `;
         console.log(promptIA);
-        const answer = await askLLM(promptIA);
+       let answer = await askLLM(promptIA);
 
-        res.json({
-            answer,
-            tags,
-            connaissances
-        });
+console.log("REPONSE OLLAMA :", answer);
 
+
+res.json({
+    answer: answer,
+    tags: tags,
+    connaissances: connaissances
+});
     } catch(error){
 
-        res.status(500).json({
-            error:error.message
-        });
+    console.error("ERREUR IA CONTROLLER :", error);
 
-    }
+    res.status(500).json({
+        error:error.message
+    });
+
 }
-
+}
 
 module.exports = {questionIA};

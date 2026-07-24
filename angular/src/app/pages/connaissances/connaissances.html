@@ -1,297 +1,436 @@
 <section class="page">
 
 
-<h1>
-Gestion des connaissances
-</h1>
+    <div class="dashboard">
 
-<!-- <p>
-Nombre : {{connaissances.length}}
-</p> -->
 
-<p *ngIf="chargement">
 
-Chargement des connaissances...
+        <!-- HEADER -->
 
-</p>
+        <header class="page-header">
 
 
+            <div>
 
-<p *ngIf="!chargement">
+                <h1>
+                    🧠 Gestion des connaissances
+                </h1>
 
-{{ connaissances.length }} connaissances trouvées
 
-</p>
+                <p class="subtitle">
 
+                    Base de connaissances intelligente BrainBox
 
+                </p>
 
 
+            </div>
 
-<div class="toolbar">
 
 
-<button routerLink="/connaissances/new">
+            <div class="counter"
 
-➕ Ajouter
+            *ngIf="!chargement">
 
-</button>
 
+                {{ connaissances.length }}
 
+                connaissances
 
-<button
 
-[disabled]="!connaissanceSelectionnee"
-type="button"
-(click)="modifier()">
+            </div>
 
-✏️ Modifier
 
-</button>
 
+        </header>
 
 
-<button
 
-[disabled]="!connaissanceSelectionnee"
-type="button"
-(click)="supprimer()">
 
-🗑 Supprimer
 
-</button>
+        <!-- CHARGEMENT -->
 
+        <p class="loading"
 
+        *ngIf="chargement">
 
-<div class="search">
 
-<input
+            Chargement des connaissances...
 
-[(ngModel)]="rechercheId"
 
-placeholder="ID">
+        </p>
 
 
-<button
-type="button"
-(click)="chercherId()">
 
-🔎
 
-</button>
 
-</div>
 
 
+        <!-- OUTILS -->
 
 
-<div class="search">
+        <div class="toolbar">
 
-<input
 
-[(ngModel)]="rechercheTag"
 
-placeholder="Tag">
+            <button
 
+            routerLink="/connaissances/new">
 
-<button
-type="button"
-(click)="chercherTag()">
 
-🏷
+                ➕ Ajouter
 
-</button>
 
-</div>
+            </button>
 
 
 
-<button
-type="button"
-(click)="charger()"
-title="Rafraîchir">
 
-🔄
 
-</button>
+            <button
 
+            [disabled]="!connaissanceSelectionnee"
+            type="button"
+            (click)="modifier()">
 
 
-</div>
+                ✏️ Modifier
 
 
+            </button>
 
 
 
-<div class="conteneur">
 
 
+            <button
 
+            class="danger"
 
+            [disabled]="!connaissanceSelectionnee"
+            type="button"
+            (click)="supprimer()">
 
-<!-- LISTE -->
 
-<div class="liste">
+                🗑 Supprimer
 
 
-<h3>
+            </button>
 
-Liste
 
-</h3>
 
 
 
-@for(
-item of connaissances;
-track item._id
-){
 
-<div
 
-class="carte"
+            <div class="search">
 
-[class.active]="
-item._id === connaissanceSelectionnee?._id
-"
 
-(click)="selectionner(item)">
+                <input
 
+                [(ngModel)]="rechercheId"
 
+                placeholder="ID">
 
-<div class="titre">
 
+                <button
+                type="button"
+                (click)="chercherId()">
 
-<span
 
-class="pastille"
+                    🔎
 
-[style.background-color]="
-item.color || '#cccccc'
-">
 
-</span>
+                </button>
 
 
+            </div>
 
-{{item.title}}
 
 
 
-@if(item.pinned){
 
-📌
 
-}
+            <div class="search">
 
 
-</div>
+                <input
 
+                [(ngModel)]="rechercheTag"
 
+                placeholder="Tag">
 
 
-<div class="tags">
+                <button
+                type="button"
+                (click)="chercherTag()">
 
 
-@for(
-tag of item.tags;
-track tag
-){
+                    🏷
 
-<span>
 
-{{tag}}
+                </button>
 
-</span>
 
-}
+            </div>
 
 
-</div>
 
 
-</div>
 
 
-}
+            <button
+            type="button"
+            (click)="charger()">
 
 
+                🔄
 
-</div>
 
+            </button>
 
 
 
+        </div>
 
 
 
-<!-- DETAIL -->
 
-<div
 
-class="detail"
 
-*ngIf="connaissanceSelectionnee">
 
 
+        <!-- ZONE PRINCIPALE -->
 
-<h2>
 
-{{connaissanceSelectionnee.title}}
+        <div class="conteneur">
 
-</h2>
 
 
 
-<p>
 
-{{connaissanceSelectionnee.content}}
+            <!-- LISTE -->
 
-</p>
 
+            <div class="liste">
 
 
 
-<p
+                <h3>
 
-*ngIf="connaissanceSelectionnee.createdAt">
+                    📚 Connaissances
 
+                </h3>
 
-Créé le :
 
-{{connaissanceSelectionnee.createdAt | date:'dd/MM/yyyy'}}
 
 
-</p>
 
+                @for(item of connaissances; track item._id){
 
 
-<div class="tags">
 
+                    <article
 
-@for(
-tag of connaissanceSelectionnee.tags;
-track tag
-){
 
-<span>
+                    class="carte"
 
-{{tag}}
 
-</span>
+                    [class.active]="
+                    item._id === connaissanceSelectionnee?._id
+                    "
 
-}
 
+                    (click)="selectionner(item)">
 
-</div>
 
 
 
-</div>
 
+                        <div class="carte-header">
 
 
+                            <div class="titre">
 
-</div>
+
+                                <span
+
+                                class="pastille"
+
+                                [style.background]="
+                                item.color || '#00d4ff'
+                                ">
+
+                                </span>
+
+
+                                {{item.title}}
+
+
+                            </div>
+
+
+
+
+                            @if(item.pinned){
+
+                                <span class="pin">
+
+                                    📌
+
+                                </span>
+
+                            }
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="tags">
+
+
+                            @for(tag of item.tags; track tag){
+
+
+                                <span>
+
+                                    {{tag}}
+
+                                </span>
+
+
+                            }
+
+
+                        </div>
+
+
+
+
+
+                        <p class="resume">
+
+
+                            {{item.content | slice:0:180}}
+
+
+                            @if(item.content.length > 180){
+
+                                ...
+
+                            }
+
+
+                        </p>
+
+
+
+
+                    </article>
+
+
+                }
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- DETAIL -->
+
+
+            <div
+
+            class="detail"
+
+            *ngIf="connaissanceSelectionnee">
+
+
+
+
+
+                <h2>
+
+
+                    {{connaissanceSelectionnee.title}}
+
+
+                </h2>
+
+
+
+
+
+                <div class="meta">
+
+
+                    ID :
+
+                    {{connaissanceSelectionnee._id}}
+
+
+                </div>
+
+
+
+
+
+                <p class="content">
+
+
+                    {{connaissanceSelectionnee.content}}
+
+
+                </p>
+
+
+
+
+
+                <div class="tags">
+
+
+                    @for(tag of connaissanceSelectionnee.tags; track tag){
+
+
+                        <span>
+
+                            {{tag}}
+
+                        </span>
+
+
+                    }
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
 
 
 </section>

@@ -1,146 +1,101 @@
-.accueil {
+.hero{
 
-  position: absolute;
+    width:100%;
+    height:calc(100vh - 70px);
 
-  top: 70px;
-  left: 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    background:
 
-  width: 100vw;
+        linear-gradient(rgba(0,0,0,.45),
+                        rgba(0,0,0,.65)),
 
-  height: calc(100vh - 70px);
+        url("/assets/accueil_bkg.webp");
 
-
-  background-image: url('/assets/accueil_bkg.webp');
-
-  background-size: cover;
-
-  background-position: center center;
-
-  background-repeat: no-repeat;
-
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-
-  overflow: hidden;
+    background-size:cover;
 
 }
 
+.glass{
 
+    width:750px;
 
-.overlay {
+    padding:60px;
 
+    background:rgba(10,15,25,.55);
 
-  background: rgba(0,0,0,0.45);
+    backdrop-filter:blur(20px);
 
+    border:1px solid rgba(255,255,255,.08);
 
-  padding: 60px;
+    border-radius:25px;
 
+    box-shadow:
 
-  border-radius: 20px;
+        0 0 40px #00d4ff22,
 
+        0 0 120px #7c3aed22;
 
-  color: white;
-
-
-  text-align: center;
-
-
-  max-width: 700px;
-
-
-  backdrop-filter: blur(5px);
-
-
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-
+    text-align:center;
 
 }
 
+.badge{
 
+    display:inline-block;
 
-h1 {
+    padding:8px 18px;
 
-  margin: 0 0 20px;
+    border-radius:50px;
 
+    background:#00d4ff22;
 
-  font-size: clamp(2rem,5vw,4rem);
+    color:#00d4ff;
 
-}
-
-
-
-p {
-
-  font-size: clamp(1rem,2vw,1.5rem);
-
-
-  margin-bottom: 35px;
+    margin-bottom:25px;
 
 }
 
+h1{
 
+    font-size:4rem;
 
-button {
-
-
-  padding: 15px 40px;
-
-
-  border: none;
-
-
-  border-radius: 12px;
-
-
-  background: #3b82f6;
-
-
-  color: white;
-
-
-  font-size: 18px;
-
-
-  cursor: pointer;
-
+    font-weight:700;
 
 }
 
+h2{
 
+    color:#00d4ff;
 
-button:hover {
+    margin:15px 0;
 
-  background: #2563eb;
+}
+
+p{
+
+    color:#d1d5db;
+
+    line-height:1.7;
+
+    margin:30px 0;
 
 }
 
+button{
 
+    padding:16px 45px;
 
-@media(max-width:768px){
+    border:none;
 
+    border-radius:50px;
 
-  .overlay {
+    background:linear-gradient(90deg,#00d4ff,#7c3aed);
 
-    margin:20px;
+    color:white;
 
-    padding:35px 25px;
-
-  }
-
-
-}
-.logo sup {
-
-  font-size: 12px;
-
-  vertical-align: super;
-
-  margin-left: 2px;
+    font-size:18px;
 
 }

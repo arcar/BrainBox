@@ -1,0 +1,640 @@
+.chat-page{
+
+
+    height:calc(100vh - 70px);
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    padding:30px;
+
+
+}
+
+
+
+
+
+
+
+.chat-container{
+
+
+    width:100%;
+
+
+    max-width:1200px;
+
+
+    height:100%;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    background:rgba(17,24,39,.65);
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.08);
+
+
+    border-radius:25px;
+
+
+    backdrop-filter:blur(15px);
+
+
+    box-shadow:
+
+
+    0 0 40px rgba(0,212,255,.12);
+
+
+}
+
+
+
+
+
+
+
+
+/* HEADER */
+
+
+.chat-header{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    padding:30px 40px;
+
+
+    border-bottom:
+
+
+    1px solid rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+
+.chat-header h1{
+
+
+    color:#00d4ff;
+
+
+    font-size:32px;
+
+
+    margin-bottom:8px;
+
+
+}
+
+
+
+
+
+.chat-header p{
+
+
+    color:#9ca3af;
+
+
+}
+
+
+
+
+
+
+
+
+.status{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    padding:10px 20px;
+
+
+    border-radius:30px;
+
+
+    background:#22c55e22;
+
+
+    color:#22c55e;
+
+
+    border:
+
+
+    1px solid #22c55e55;
+
+
+}
+
+
+
+
+
+.status span{
+
+
+    width:10px;
+
+
+    height:10px;
+
+
+    background:#22c55e;
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+
+    0 0 12px #22c55e;
+
+
+}
+
+
+
+
+
+
+
+
+/* CONVERSATION */
+
+
+.conversation{
+
+
+    flex:1;
+
+
+    overflow-y:auto;
+
+
+    padding:40px;
+
+
+}
+
+
+
+
+
+
+.empty{
+
+
+    height:100%;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    color:#9ca3af;
+
+
+}
+
+
+
+
+
+.empty .icon{
+
+
+    font-size:70px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.empty h2{
+
+
+    color:#00d4ff;
+
+
+    margin-bottom:10px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* MESSAGE */
+
+
+.message{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+    align-items:flex-start;
+
+
+}
+
+
+
+
+
+
+.avatar{
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    background:#00d4ff22;
+
+
+    border:
+
+
+    1px solid #00d4ff55;
+
+
+    border-radius:50%;
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+
+
+
+.bubble{
+
+
+    flex:1;
+
+
+    background:#0f172a;
+
+
+    padding:25px;
+
+
+    border-radius:20px;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.08);
+
+
+    line-height:1.8;
+
+
+    box-shadow:
+
+
+    0 0 20px rgba(0,0,0,.3);
+
+
+}
+
+
+
+
+
+.bubble h3{
+
+
+    color:#00d4ff;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+
+
+
+
+.bubble p{
+
+
+    color:#e5e7eb;
+
+
+    white-space:pre-line;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ZONE DE SAISIE */
+
+
+.input-zone{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+    padding:25px 35px;
+
+
+    border-top:
+
+
+    1px solid rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+
+textarea{
+
+
+    flex:1;
+
+
+    resize:none;
+
+
+    padding:18px;
+
+
+    border-radius:18px;
+
+
+    background:#0f172a;
+
+
+    color:white;
+
+
+    font-size:16px;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.1);
+
+
+}
+
+
+
+
+
+textarea:focus{
+
+
+    border-color:#00d4ff;
+
+
+    box-shadow:
+
+
+    0 0 15px #00d4ff55;
+
+
+}
+
+
+
+
+
+
+button{
+
+
+    width:180px;
+
+
+    border:none;
+
+
+    border-radius:18px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-size:17px;
+
+
+    font-weight:600;
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        #00d4ff,
+
+        #7c3aed
+
+    );
+
+
+    transition:.25s;
+
+
+}
+
+
+
+
+
+
+button:hover{
+
+
+    transform:translateY(-3px);
+
+
+    box-shadow:
+
+
+    0 0 25px #00d4ff66;
+
+
+}
+
+
+
+
+
+
+button span{
+
+
+    margin-right:8px;
+
+
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:800px){
+
+
+    .chat-page{
+
+
+        padding:10px;
+
+
+    }
+
+
+
+    .chat-header{
+
+
+        flex-direction:column;
+
+
+        align-items:flex-start;
+
+
+        gap:20px;
+
+
+    }
+
+
+
+
+    .input-zone{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+
+    button{
+
+
+        width:100%;
+
+
+        height:55px;
+
+
+    }
+
+
+}
