@@ -1,32 +1,26 @@
 const axios = require("axios");
 
 
+const OLLAMA_URL = process.env.OLLAMA_URL;
+
+
 async function askLLM(prompt){
 
-    try {
+    const response = await axios.post(
+        `${OLLAMA_URL}/api/generate`,
+        {
+            model:"qwen2.5:3b",
+            prompt,
+            stream:false,
+            options:{temperature:0},
+        },
+        {
+        timeout:120000
+        }
+    
+    );
 
-        const response = await axios.post(
-            "http://localhost:11434/api/generate",
-            {
-                model: "gemma4:e4b",
-                prompt: prompt,
-                stream: false
-            }
-        );
-
-
-        return response.data.response;
-
-
-    } catch(error){
-
-        console.error(
-            "Erreur Ollama :",
-            error.message
-        );
-
-        throw new Error("Impossible de contacter le modèle IA");
-    }
+    return response.data.response;
 }
 
 

@@ -1,0 +1,203 @@
+<section class="chat-page">
+
+
+    <div class="chat-container">
+
+
+
+        <!-- HEADER -->
+
+        <header class="chat-header">
+
+
+            <div>
+
+
+                <h1>
+
+                    🤖 Assistant BrainBox
+
+                </h1>
+
+
+                <p>
+
+                    Interrogez votre base de connaissances
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="status">
+
+
+                <span></span>
+
+                IA Online
+
+
+            </div>
+
+
+
+        </header>
+
+
+
+
+
+
+
+        <!-- REPONSE -->
+
+
+        <section class="conversation">
+
+
+
+            @if(!reponse){
+
+
+                <div class="empty">
+
+
+                    <div class="icon">
+
+                        🧠
+
+                    </div>
+
+
+                    <h2>
+
+                        Posez votre première question
+
+                    </h2>
+
+
+                    <p>
+
+                        BrainBox analyse vos connaissances
+                        pour vous répondre.
+
+                    </p>
+
+
+                </div>
+
+
+            }
+
+
+
+
+
+            @else{
+
+
+                <article class="message ia">
+
+
+                    <div class="avatar">
+
+                        🤖
+
+                    </div>
+
+
+
+                    <div class="bubble">
+
+
+                        <h3>
+
+                            Réponse BrainBox
+
+                        </h3>
+
+
+
+                        <p>
+
+                            {{reponse}}
+
+                        </p>
+
+
+                    </div>
+
+
+                </article>
+
+
+            }
+
+
+
+        </section>
+
+
+
+
+
+
+
+
+        <!-- SAISIE QUESTION -->
+
+
+        <section class="input-zone">
+
+
+
+            <textarea
+
+            [(ngModel)]="question"
+
+            placeholder="Posez votre question à BrainBox..."
+
+            rows="3">
+
+            </textarea>
+
+
+
+
+
+            <button
+
+            type="button"
+
+            (click)="envoyer()">
+
+
+                <span>
+
+                    🚀
+
+                </span>
+
+
+                Envoyer
+
+
+
+            </button>
+
+
+
+
+        </section>
+
+
+
+
+
+    </div>
+
+
+
+</section>

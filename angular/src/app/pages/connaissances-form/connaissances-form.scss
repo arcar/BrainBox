@@ -1,0 +1,540 @@
+.form-page{
+
+
+    height:calc(100vh - 70px);
+
+
+    overflow-y:auto;
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:flex-start;
+
+
+    padding:40px 30px 100px;
+
+
+
+}
+
+
+
+
+
+
+.formulaire{
+
+
+    width:900px;
+
+
+    background:rgba(17,24,39,.85);
+
+
+    border-radius:25px;
+
+
+    padding:40px;
+
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+
+
+    box-shadow:
+
+
+    0 0 40px rgba(0,212,255,.15);
+
+
+
+    backdrop-filter:blur(15px);
+
+
+
+}
+
+
+
+
+
+
+
+.form-header{
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+
+
+.form-header h1{
+
+
+    color:#00d4ff;
+
+
+    font-size:32px;
+
+
+    margin-bottom:10px;
+
+
+
+}
+
+
+
+
+
+.form-header p{
+
+
+    color:#9ca3af;
+
+
+    font-size:16px;
+
+
+
+}
+
+
+
+
+
+
+
+
+.form-group{
+
+
+    margin-bottom:25px;
+
+
+
+}
+
+
+
+
+
+.form-group label{
+
+
+    display:block;
+
+
+    margin-bottom:10px;
+
+
+    color:#cbd5e1;
+
+
+    font-weight:600;
+
+
+
+}
+
+
+
+
+
+
+
+input,
+textarea{
+
+
+    width:100%;
+
+
+    padding:14px;
+
+
+    background:#0f172a;
+
+
+    color:white;
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.12);
+
+
+
+    border-radius:12px;
+
+
+    font-size:16px;
+
+
+
+}
+
+
+
+
+
+textarea{
+
+
+    resize:vertical;
+
+
+    min-height:220px;
+
+
+
+}
+
+
+
+
+
+
+
+input:focus,
+textarea:focus{
+
+
+    outline:none;
+
+
+    border-color:#00d4ff;
+
+
+    box-shadow:
+
+
+    0 0 15px rgba(0,212,255,.35);
+
+
+
+}
+
+
+
+
+
+
+
+.color-group input{
+
+
+    width:90px;
+
+
+    height:45px;
+
+
+    padding:5px;
+
+
+    cursor:pointer;
+
+
+
+}
+
+
+
+
+
+
+
+
+.options{
+
+
+    display:flex;
+
+
+    gap:40px;
+
+
+    margin-top:20px;
+
+
+    margin-bottom:35px;
+
+
+
+}
+
+
+
+
+
+
+.options label{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    color:#e5e7eb;
+
+
+    cursor:pointer;
+
+
+
+}
+
+
+
+
+
+
+.options input{
+
+
+    width:auto;
+
+
+}
+
+
+
+
+
+
+
+
+.actions{
+
+
+    display:flex;
+
+
+    justify-content:flex-end;
+
+
+    gap:20px;
+
+
+    padding-top:25px;
+
+
+    border-top:
+
+
+    1px solid rgba(255,255,255,.08);
+
+
+
+}
+
+
+
+
+
+
+
+.actions button{
+
+
+    padding:14px 35px;
+
+
+    border:none;
+
+
+    border-radius:15px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-size:16px;
+
+
+    transition:.25s;
+
+
+
+}
+
+
+
+
+
+.actions button:hover{
+
+
+    transform:translateY(-3px);
+
+
+
+}
+
+
+
+
+
+
+
+.save{
+
+
+    background:
+
+
+    linear-gradient(
+
+        90deg,
+
+        #00d4ff,
+
+        #7c3aed
+
+    );
+
+
+
+    box-shadow:
+
+
+    0 0 20px rgba(0,212,255,.3);
+
+
+
+}
+
+
+
+
+
+.cancel{
+
+
+    background:#374151;
+
+
+
+}
+
+
+
+
+
+.cancel:hover{
+
+
+    background:#4b5563;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+@media(max-width:900px){
+
+
+
+    .form-page{
+
+
+        padding:20px;
+
+
+
+    }
+
+
+
+
+
+
+    .formulaire{
+
+
+        width:100%;
+
+
+        padding:25px;
+
+
+
+    }
+
+
+
+
+
+
+
+    .options{
+
+
+        flex-direction:column;
+
+
+        gap:15px;
+
+
+
+    }
+
+
+
+
+
+
+    .actions{
+
+
+        flex-direction:column;
+
+
+
+    }
+
+
+
+
+
+
+    .actions button{
+
+
+        width:100%;
+
+
+
+    }
+
+
+
+}

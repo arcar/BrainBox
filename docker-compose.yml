@@ -1,7 +1,7 @@
 services:
   api:    
     build:
-      context: ./API
+      context: ./api
       dockerfile: Dockerfile
     image: arcar13/brainbox:backend
     container_name: brainbox-api
@@ -12,16 +12,39 @@ services:
       - /app/node_modules
     env_file:
       - ./api/.env
+    environment:
+      OLLAMA_URL: http://ollama:11434
+    depends_on:
+      - ollama
 
-
+  frontend:
+    build:
+      context: ./angular
+      dockerfile: Dockerfile
+    image: arcar13/brainbox:angular
+    container_name: brainbox-angular
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./angular:/app
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      VITE_USE_POLLING: "true"
+      WATCHPACK_POLLING: "true"
+   
+    depends_on:
+      - api
 
   ollama:
     image: ollama/ollama
     container_name: brainbox-ollama
     ports:
       - "11434:11434"
+    env_file:
+      - ./api/.env
     volumes:
-      - ./models:/root/.ollama
+      - ./LLM:/root/.ollama
     deploy:
       resources:
         reservations:

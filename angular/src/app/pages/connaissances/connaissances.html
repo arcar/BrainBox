@@ -1,0 +1,436 @@
+<section class="page">
+
+
+    <div class="dashboard">
+
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+
+            <div>
+
+                <h1>
+                    🧠 Gestion des connaissances
+                </h1>
+
+
+                <p class="subtitle">
+
+                    Base de connaissances intelligente BrainBox
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="counter"
+
+            *ngIf="!chargement">
+
+
+                {{ connaissances.length }}
+
+                connaissances
+
+
+            </div>
+
+
+
+        </header>
+
+
+
+
+
+        <!-- CHARGEMENT -->
+
+        <p class="loading"
+
+        *ngIf="chargement">
+
+
+            Chargement des connaissances...
+
+
+        </p>
+
+
+
+
+
+
+
+        <!-- OUTILS -->
+
+
+        <div class="toolbar">
+
+
+
+            <button
+
+            routerLink="/connaissances/new">
+
+
+                ➕ Ajouter
+
+
+            </button>
+
+
+
+
+
+            <button
+
+            [disabled]="!connaissanceSelectionnee"
+            type="button"
+            (click)="modifier()">
+
+
+                ✏️ Modifier
+
+
+            </button>
+
+
+
+
+
+            <button
+
+            class="danger"
+
+            [disabled]="!connaissanceSelectionnee"
+            type="button"
+            (click)="supprimer()">
+
+
+                🗑 Supprimer
+
+
+            </button>
+
+
+
+
+
+
+
+            <div class="search">
+
+
+                <input
+
+                [(ngModel)]="rechercheId"
+
+                placeholder="ID">
+
+
+                <button
+                type="button"
+                (click)="chercherId()">
+
+
+                    🔎
+
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="search">
+
+
+                <input
+
+                [(ngModel)]="rechercheTag"
+
+                placeholder="Tag">
+
+
+                <button
+                type="button"
+                (click)="chercherTag()">
+
+
+                    🏷
+
+
+                </button>
+
+
+            </div>
+
+
+
+
+
+
+            <button
+            type="button"
+            (click)="charger()">
+
+
+                🔄
+
+
+            </button>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <!-- ZONE PRINCIPALE -->
+
+
+        <div class="conteneur">
+
+
+
+
+
+            <!-- LISTE -->
+
+
+            <div class="liste">
+
+
+
+                <h3>
+
+                    📚 Connaissances
+
+                </h3>
+
+
+
+
+
+                @for(item of connaissances; track item._id){
+
+
+
+                    <article
+
+
+                    class="carte"
+
+
+                    [class.active]="
+                    item._id === connaissanceSelectionnee?._id
+                    "
+
+
+                    (click)="selectionner(item)">
+
+
+
+
+
+                        <div class="carte-header">
+
+
+                            <div class="titre">
+
+
+                                <span
+
+                                class="pastille"
+
+                                [style.background]="
+                                item.color || '#00d4ff'
+                                ">
+
+                                </span>
+
+
+                                {{item.title}}
+
+
+                            </div>
+
+
+
+
+                            @if(item.pinned){
+
+                                <span class="pin">
+
+                                    📌
+
+                                </span>
+
+                            }
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="tags">
+
+
+                            @for(tag of item.tags; track tag){
+
+
+                                <span>
+
+                                    {{tag}}
+
+                                </span>
+
+
+                            }
+
+
+                        </div>
+
+
+
+
+
+                        <p class="resume">
+
+
+                            {{item.content | slice:0:180}}
+
+
+                            @if(item.content.length > 180){
+
+                                ...
+
+                            }
+
+
+                        </p>
+
+
+
+
+                    </article>
+
+
+                }
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+            <!-- DETAIL -->
+
+
+            <div
+
+            class="detail"
+
+            *ngIf="connaissanceSelectionnee">
+
+
+
+
+
+                <h2>
+
+
+                    {{connaissanceSelectionnee.title}}
+
+
+                </h2>
+
+
+
+
+
+                <div class="meta">
+
+
+                    ID :
+
+                    {{connaissanceSelectionnee._id}}
+
+
+                </div>
+
+
+
+
+
+                <p class="content">
+
+
+                    {{connaissanceSelectionnee.content}}
+
+
+                </p>
+
+
+
+
+
+                <div class="tags">
+
+
+                    @for(tag of connaissanceSelectionnee.tags; track tag){
+
+
+                        <span>
+
+                            {{tag}}
+
+                        </span>
+
+
+                    }
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>

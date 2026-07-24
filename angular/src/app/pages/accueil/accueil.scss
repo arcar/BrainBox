@@ -1,0 +1,101 @@
+.hero{
+
+    width:100%;
+    height:calc(100vh - 70px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+
+        linear-gradient(rgba(0,0,0,.45),
+                        rgba(0,0,0,.65)),
+
+        url("/assets/accueil_bkg.webp");
+
+    background-size:cover;
+
+}
+
+.glass{
+
+    width:750px;
+
+    padding:60px;
+
+    background:rgba(10,15,25,.55);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    box-shadow:
+
+        0 0 40px #00d4ff22,
+
+        0 0 120px #7c3aed22;
+
+    text-align:center;
+
+}
+
+.badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    background:#00d4ff22;
+
+    color:#00d4ff;
+
+    margin-bottom:25px;
+
+}
+
+h1{
+
+    font-size:4rem;
+
+    font-weight:700;
+
+}
+
+h2{
+
+    color:#00d4ff;
+
+    margin:15px 0;
+
+}
+
+p{
+
+    color:#d1d5db;
+
+    line-height:1.7;
+
+    margin:30px 0;
+
+}
+
+button{
+
+    padding:16px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(90deg,#00d4ff,#7c3aed);
+
+    color:white;
+
+    font-size:18px;
+
+}

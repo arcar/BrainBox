@@ -1,0 +1,202 @@
+[
+  {
+    "title": "Introduction à Angular",
+    "content": "Angular est un framework front-end développé par Google. Il permet de créer des applications web modernes en utilisant TypeScript, des composants réutilisables et un système de routage performant.",
+    "tags": ["angular", "frontend", "typescript"],
+    "color": "#E3F2FD",
+    "pinned": true,
+    "archived": false,
+    "createdAt": "2026-07-01T09:15:00Z",
+    "updatedAt": "2026-07-01T09:15:00Z"
+  },
+  {
+    "title": "Les services Angular",
+    "content": "Les services permettent de centraliser la logique métier et de partager des données entre plusieurs composants grâce au mécanisme d'injection de dépendances.",
+    "tags": ["angular", "service", "di"],
+    "color": "#E8F5E9",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-02T10:30:00Z",
+    "updatedAt": "2026-07-02T11:00:00Z"
+  },
+  {
+    "title": "Comprendre les Observables",
+    "content": "Les Observables de RxJS permettent de gérer efficacement les flux de données asynchrones tels que les requêtes HTTP, les événements utilisateur et les WebSockets.",
+    "tags": ["rxjs", "angular", "async"],
+    "color": "#FFF8E1",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-03T08:45:00Z",
+    "updatedAt": "2026-07-03T08:45:00Z"
+  },
+  {
+    "title": "Créer une API Express",
+    "content": "Express facilite la création d'API REST grâce à un système de routes simple, des middlewares et une intégration rapide avec les bases de données.",
+    "tags": ["nodejs", "express", "backend"],
+    "color": "#F3E5F5",
+    "pinned": true,
+    "archived": false,
+    "createdAt": "2026-07-04T14:10:00Z",
+    "updatedAt": "2026-07-04T14:10:00Z"
+  },
+  {
+    "title": "Connexion à MongoDB",
+    "content": "Le driver officiel MongoDB permet de manipuler facilement les collections, les documents et les agrégations dans une application Node.js.",
+    "tags": ["mongodb", "database", "nodejs"],
+    "color": "#E8F5E9",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-05T16:20:00Z",
+    "updatedAt": "2026-07-05T16:40:00Z"
+  },
+  {
+    "title": "Docker Compose",
+    "content": "Docker Compose simplifie le lancement simultané de plusieurs conteneurs comme une API, une base MongoDB et une application Angular.",
+    "tags": ["docker", "compose", "devops"],
+    "color": "#E1F5FE",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-06T09:00:00Z",
+    "updatedAt": "2026-07-06T09:00:00Z"
+  },
+  {
+    "title": "Les Guards Angular",
+    "content": "Les Guards permettent de protéger certaines routes en vérifiant les droits d'accès avant le chargement d'un composant.",
+    "tags": ["angular", "security", "routing"],
+    "color": "#FFF3E0",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-07T13:30:00Z",
+    "updatedAt": "2026-07-07T13:45:00Z"
+  },
+  {
+    "title": "MongoDB Atlas",
+    "content": "MongoDB Atlas offre une base de données cloud sécurisée avec sauvegardes automatiques, réplication et montée en charge simplifiée.",
+    "tags": ["mongodb", "atlas", "cloud"],
+    "color": "#F1F8E9",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-08T11:25:00Z",
+    "updatedAt": "2026-07-08T11:25:00Z"
+  },
+  {
+    "title": "Les Pipes Angular",
+    "content": "Les Pipes permettent de transformer facilement l'affichage des données comme les dates, devises ou textes directement dans les templates.",
+    "tags": ["angular", "pipe", "template"],
+    "color": "#FCE4EC",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-09T08:10:00Z",
+    "updatedAt": "2026-07-09T08:10:00Z"
+  },
+  {
+    "title": "Créer un composant réutilisable",
+    "content": "Un composant bien conçu possède des entrées, des sorties et une responsabilité unique afin d'être facilement réutilisable dans plusieurs pages.",
+    "tags": ["angular", "component", "frontend"],
+    "color": "#EDE7F6",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-10T17:40:00Z",
+    "updatedAt": "2026-07-10T17:55:00Z"
+  },
+  {
+    "title": "Introduction à Ollama",
+    "content": "Ollama permet d'exécuter localement des modèles de langage sans dépendre d'un service cloud tout en exposant une API REST simple.",
+    "tags": ["ollama", "ia", "llm"],
+    "color": "#E0F2F1",
+    "pinned": true,
+    "archived": false,
+    "createdAt": "2026-07-11T09:45:00Z",
+    "updatedAt": "2026-07-11T09:45:00Z"
+  },
+  {
+    "title": "Les requêtes HTTP Angular",
+    "content": "HttpClient facilite les appels vers une API REST et permet de récupérer des Observables pour traiter les réponses de manière réactive.",
+    "tags": ["angular", "http", "api"],
+    "color": "#FFFDE7",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-12T15:10:00Z",
+    "updatedAt": "2026-07-12T15:30:00Z"
+  },
+  {
+    "title": "Validation des formulaires",
+    "content": "Les Reactive Forms permettent de construire des formulaires robustes avec validations synchrones et asynchrones.",
+    "tags": ["angular", "forms", "validation"],
+    "color": "#F9FBE7",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-13T10:50:00Z",
+    "updatedAt": "2026-07-13T11:20:00Z"
+  },
+  {
+    "title": "Bonnes pratiques REST",
+    "content": "Une API REST doit utiliser les méthodes HTTP appropriées, des codes de retour cohérents et une structure de ressources claire.",
+    "tags": ["api", "rest", "backend"],
+    "color": "#ECEFF1",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-14T09:30:00Z",
+    "updatedAt": "2026-07-14T09:30:00Z"
+  },
+  {
+    "title": "Introduction à SCSS",
+    "content": "SCSS apporte des variables, des fonctions, des mixins et une meilleure organisation des feuilles de style pour les projets complexes.",
+    "tags": ["scss", "css", "frontend"],
+    "color": "#FCE4EC",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-15T14:00:00Z",
+    "updatedAt": "2026-07-15T14:15:00Z"
+  },
+  {
+    "title": "Indexation MongoDB",
+    "content": "Les index améliorent considérablement les performances des recherches mais augmentent légèrement le coût des écritures.",
+    "tags": ["mongodb", "performance", "database"],
+    "color": "#E8EAF6",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-16T08:20:00Z",
+    "updatedAt": "2026-07-16T08:20:00Z"
+  },
+  {
+    "title": "Architecture MVC",
+    "content": "Le modèle MVC sépare les responsabilités entre les modèles, les contrôleurs et les vues afin de rendre l'application plus maintenable.",
+    "tags": ["architecture", "mvc", "backend"],
+    "color": "#FFF8E1",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-17T16:45:00Z",
+    "updatedAt": "2026-07-17T16:45:00Z"
+  },
+  {
+    "title": "Gestion des erreurs Express",
+    "content": "Un middleware dédié permet de centraliser la gestion des erreurs et de retourner des réponses JSON homogènes à tous les clients.",
+    "tags": ["express", "middleware", "nodejs"],
+    "color": "#F3E5F5",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-18T12:15:00Z",
+    "updatedAt": "2026-07-18T12:15:00Z"
+  },
+  {
+    "title": "Les Signals Angular",
+    "content": "Les Signals simplifient la gestion de l'état en offrant une approche réactive plus légère que certains usages historiques de RxJS.",
+    "tags": ["angular", "signals", "state"],
+    "color": "#E0F7FA",
+    "pinned": true,
+    "archived": false,
+    "createdAt": "2026-07-19T09:05:00Z",
+    "updatedAt": "2026-07-19T09:35:00Z"
+  },
+  {
+    "title": "Déployer avec Docker",
+    "content": "Une application composée d'Angular, Express et MongoDB peut être déployée facilement grâce à Docker Compose et à des volumes persistants.",
+    "tags": ["docker", "deployment", "fullstack"],
+    "color": "#E1F5FE",
+    "pinned": false,
+    "archived": false,
+    "createdAt": "2026-07-20T18:00:00Z",
+    "updatedAt": "2026-07-20T18:30:00Z"
+  }
+]
