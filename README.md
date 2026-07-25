@@ -179,7 +179,7 @@ docker compose version
 ```bash
 Cloner le dépôt :
 
-git clone https://github.com/votre-utilisateur/brainbox.git
+git clone https://github.com/arcar/BrainBox.git
 
 Entrer dans le dossier :
 
