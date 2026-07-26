@@ -185,6 +185,26 @@ Entrer dans le dossier :
 
 cd brainbox
 ```
+---
+
+# 📥 Installation et peuplement de MongoDB
+
+```bash
+Installer et configurer MongoDB :
+
+https://www.mongodb.com/
+
+Installer MongoDB Compass :
+
+https://www.mongodb.com/try/download/compass
+
+Une fois cela complété, sur MongoDB Compass, créer une database nommée "brainbox" et y insérer une collection nommée "connaissance".
+
+Cliquer sur "ADD Data", sélectionner "Import Json or Csv file" et choisir le fichier "brainbox.connaissance.json" situé à la racine du projet BrainBox
+
+
+```
+
 
 ---
 # ⚙️ Configuration
@@ -192,17 +212,15 @@ cd brainbox
 
 Créer un fichier :
 
-.env  à la racine du projet.
+.env  dans le dossier API.
 
 Exemple :
 
-MONGO_HOST=mongodb
-MONGO_PORT=27017
-MONGO_DATABASE=brainbox
-
-OLLAMA_HOST=http://ollama:11434
-
-OLLAMA_MODEL=qwen2.5:3b
+MONGODB_USERNAME="Votre USERNAME MongoDB"
+MONGODB_PASSWORD="Votre Mot de Passe MongoDB
+"
+MONGODB_URI="VOtre URI MongoDB"
+OLLAMA_URL=http://ollama:11434
 ```
 ---
 # 🐳 Lancement avec Docker
