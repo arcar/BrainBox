@@ -174,6 +174,19 @@ docker compose version
 ```
 ---
 
+# 📥 Installation du projet
+
+```bash
+Cloner le dépôt :
+
+git clone https://github.com/arcar/BrainBox.git
+
+Entrer dans le dossier :
+
+cd brainbox
+```
+---
+
 # 📥 Installation et peuplement de MongoDB
 
 ```bash
@@ -237,12 +250,6 @@ docker exec -it brainbox-ollama sh
 Télécharger le modèle :
 
 ollama pull qwen2.5:3b
-
-Si vous souhaitez utiliser un autre modèle :
-
-ollama pull <Nom du modèle> 
-
-et ensuite modifier le fichier :"API/services/ollamaService.js" et modifier la ligne 12 : "model:"qwen2.5:3b"," par "model:"<Nom_du_modèle_à_utiliser>","
 
 Vérifier :
 
