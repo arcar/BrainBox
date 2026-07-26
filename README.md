@@ -251,6 +251,14 @@ Télécharger le modèle :
 
 ollama pull qwen2.5:3b
 
+Qwen2.5:3b a été choisi car après plusieurs tests, il s'avère qu'il a été le plus efficace. Sa version 3b est particulièrement adaptée pour un portable comme le mien équipé de 8 gb de Vram.
+
+Si vous souhaitiez changer de modèle :
+
+ollama pull <modèle_choisi>
+
+Modifier le fichier API/services/ollamaService.js et remplacer ligne 12 "qwen2.5:3b" par le modèle par vous avez choisi.
+
 Vérifier :
 
 ollama list
