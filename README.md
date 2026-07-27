@@ -237,7 +237,6 @@ Services attendus :
 
 brainbox-angular
 brainbox-api
-brainbox-mongodb
 brainbox-ollama
 ```
 ---
@@ -274,9 +273,7 @@ API Node :
 
 http://localhost:3000
 
-MongoDB :
 
-localhost:27017
 ```
 ---
 
